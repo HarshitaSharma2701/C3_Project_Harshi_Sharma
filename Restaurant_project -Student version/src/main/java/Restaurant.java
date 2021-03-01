@@ -12,6 +12,7 @@ public class Restaurant {
     public calendar = Calendar.getInstance();
     public time = calendar.time;
     public currentTime: String = SimpleDateFormat("HH:mm").format(time);
+    public int totalPrice;
 
     public Restaurant(String name, String location, LocalTime openingTime, LocalTime closingTime) {
         this.name = name;
@@ -58,6 +59,17 @@ public class Restaurant {
         menu.add(newItem);
     }
     
+    public int displayCost(int totalPrice) {
+        Item newItem = new Item(name,price);
+        menu.add(newItem);
+        if(newItem)
+           int totalPrice = totalPrice + newItem.price;
+           int tax = (totalPrice * 0.18);
+           int totalPrice = totalPrice + tax;
+           return totalPrice;
+
+    }
+    
     public void removeFromMenu(String itemName) throws itemNotFoundException {
 
         Item itemToBeRemoved = findItemByName(itemName);
@@ -83,4 +95,13 @@ public class Restaurant {
          this.name = name;
     }
 
+    public int getTotalPrice() { return displayCost(totalPrice) }
+
+    public  void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    
+    
+    
 }

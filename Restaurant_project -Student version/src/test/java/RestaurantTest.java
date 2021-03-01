@@ -31,6 +31,19 @@ class RestaurantTest {
     }
 
     @Test
+    public void is_restaurant_open_should_return_true_if_time_is_between_opening_and_closing_time(){
+        //WRITE UNIT TEST CASE HERE
+//        restaurant = new Restaurant();
+
+        int isRestaurantOpened = restaurant.isRestaurantOpen().size();
+        restaurant.isRestaurantOpen("Restaurant is Open");
+        assertEquals("Restaurant is Open",restaurant.isRestaurantOpen().size());
+
+    }
+
+
+
+    @Test
     public void is_restaurant_open_should_return_true_if_time_is_between_opening_and_closing_time_Failure_Scenario(){
         //WRITE UNIT TEST CASE HERE
 //        restaurant = new Restaurant();
@@ -58,6 +71,48 @@ class RestaurantTest {
         int isRestaurantClosed = restaurant.isRestaurantOpen().size();
         restaurant.isRestaurantOpen("Out of Scope");
         assertEquals("Out of Scope",restaurant.isRestaurantOpen().size());
+
+
+    }
+    @Test
+    public void is_totalPrice_Is_displayed_properly_Added_To_The_Menu_Success_Senario(){
+        //WRITE UNIT TEST CASE HERE
+//        restaurant = new Restaurant();
+        int isTotalPriceDisplayed = restaurant.getTotalPrice().size();
+        restaurant.getTotalPrice("Correct Amount Displayed", isTotalPriceDisplayed);
+        assertEquals(isTotalPriceDisplayed,restaurant.getTotalPrice().size());
+
+
+    }
+
+    @Test
+    public void is_totalPrice_Is_displayed_properly_Added_To_The_Menu_Success_Senario_Correct_Sum(){
+        //WRITE UNIT TEST CASE HERE
+//        restaurant = new Restaurant();
+        int isTotalPriceDisplayedSummationCorrect = restaurant.displayCost(totalPrice).size();
+        restaurant.displayCost("Correct Sum Amount Displayed", isTotalPriceDisplayed);
+        assertEquals(isTotalPriceDisplayed,restaurant.getTotalPrice().size());
+
+
+    }
+    @Test
+    public void is_totalPrice_Is_displayed_properly_Added_To_The_Menu_Failure_Senario(){
+        //WRITE UNIT TEST CASE HERE
+//        restaurant = new Restaurant();
+        int isTotalNotPriceDisplayed = restaurant.getTotalPriceWrongMethodCalled().size();
+        restaurant.getTotalPriceWrongMethodCalled("InCorrect Amount Displayed", isTotalNotPriceDisplayed);
+        System.out.println("Method Does not exists");
+        assertEquals(isTotalNotPriceDisplayed,restaurant.getTotalPriceWrongMethodCalled().size());
+
+
+    }
+    @Test
+    public void is_totalPrice_Is_displayed_properly_Added_To_The_Menu_Failure_Senario_Summation_Incorrect(){
+        //WRITE UNIT TEST CASE HERE
+//        restaurant = new Restaurant();
+        int isTotalPriceDisplayedSumIncorrect = restaurant.displayCost(totalPrice).size();
+        restaurant.displayCost("InCorrect Amount Displayed due to Wrong Summation", isTotalPriceDisplayedSummationCorrect);
+        assertEquals(isTotalPriceDisplayedSumIncorrect,restaurant.displayCost(totalPrice).size());
 
 
     }

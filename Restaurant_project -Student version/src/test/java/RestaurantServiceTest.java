@@ -120,7 +120,7 @@ class RestaurantServiceTest {
 //        restaurant = service.addRestaurant("Amelie's cafe","Chennai",openingTime,closingTime);
 //        restaurant.addToMenu("Sweet corn soup",119);
 //        restaurant.addToMenu("Vegetable lasagne", 269);
-
+        displayCost
         int initialNumberOfRestaurants = service.getRestaurants().size();
         service.addRestaurant("Invalid","Invalid",LocalTime.parse("26:00:00"),LocalTime.parse("27:00:00"));
         System.out.println("Invalid Input")
